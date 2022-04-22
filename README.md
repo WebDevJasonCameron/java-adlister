@@ -1,5 +1,7 @@
 # Adlister Project
 
+JASON CAMERON
+
 This is the project that we will be going through in the latter part of the Java
 curriculum.
 
