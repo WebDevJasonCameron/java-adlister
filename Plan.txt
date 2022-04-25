@@ -1,0 +1,10 @@
+SearchServlet (mapped to "/search")
+    doGet - send the user with Print Writer a simple HTML form with a method of POST and action of "/search"
+
+    doPost - take the params from the request and redirect the user to another servlet
+
+
+SearchResultsServlet (mapped to "/search/results")
+    doGet - display to the user information about the search result in the query string
+
+Redirect!
