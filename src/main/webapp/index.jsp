@@ -2,14 +2,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%= "some title" %></title>
+    <title><%= "JSTL and JSP Mini Ex" %></title>
 </head>
 <body>
-    <c:if test="true">
-        <h1>Variable names should be very descriptive</h1>
-    </c:if>
-    <c:if test="false">
-        <h1>single letter variable names are good</h1>
-    </c:if>
+
+    <%
+        String redirectURL = "http://localhost:8080/foods.jsp";
+        response.sendRedirect(redirectURL);
+    %>
+
 </body>
 </html>
