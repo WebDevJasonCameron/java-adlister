@@ -1,10 +1,19 @@
-public class DaoFactory {
-    private static Ads adsDao;
+/**
+ *  Although this is titled DaoFactory, it really is a class that manages
+ *  multiple DAO logics. I think of it as the mid-level controller between
+ *  CRUD and outside interactions
+ */
 
-    public static Ads getAdsDao() {
-        if (adsDao == null) {
-            adsDao = new ListAdsDao();
+public class DaoFactory {
+
+    // F
+    private static Products productsDao;
+
+    // METH
+    public static Products getProductsDao(){
+        if (productsDao == null) {
+            productsDao = new ListProductsDao();
         }
-        return adsDao;
+        return productsDao;
     }
 }
