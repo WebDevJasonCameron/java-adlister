@@ -17,6 +17,9 @@ public class GuessServlet extends HttpServlet {
         int num = Integer.parseInt(req.getParameter("num"));
         int comp = (int) ((Math.random() * (3 - 1)) + 1);
 
+        req.setAttribute("num", num);
+        req.setAttribute("comp", comp);
+
         System.out.println(num + " and " + comp);
 
         if(num > 3 || num < 1) {
