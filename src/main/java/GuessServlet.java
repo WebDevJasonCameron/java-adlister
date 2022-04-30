@@ -17,20 +17,18 @@ public class GuessServlet extends HttpServlet {
         int num = Integer.parseInt(req.getParameter("num"));
         int comp = (int) ((Math.random() * (3 - 1)) + 1);
 
-//        req.setAttribute("num", num);
-//        req.setAttribute("comp", comp);
-
         System.out.println(num + " and " + comp);
 
-        if(num < 1 || num > 3) resp.sendRedirect("http:/localhost:8080/guess");
-
-        if(num == comp) {
+        if(num > 3 || num < 1) {
+            System.out.println("out of bonds");
+            resp.sendRedirect("/guess");
+        } else if(num == comp) {
             System.out.println("you win");
-            resp.sendRedirect("/correct?num=" + num + "&comp=" + comp );
+            resp.sendRedirect("/correct" );
         }
         else {
             System.out.println("fail");
-            resp.sendRedirect("/incorrect?num=" + num + "&comp=" + comp);
+            resp.sendRedirect("/incorrect");
         }
 
     }

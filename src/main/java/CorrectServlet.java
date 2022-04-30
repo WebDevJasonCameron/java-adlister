@@ -5,12 +5,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "CorrectServet", displayName = "/correct")
+@WebServlet(name = "CorrectServet", urlPatterns = "/correct")
 public class CorrectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int num = Integer.parseInt(req.getParameter("num"));
-        int comp = Integer.parseInt(req.getParameter("comp"));
-        req.getRequestDispatcher("/correct.jsp").forward(req, resp);
+        req.setAttribute("result", true);
+        req.getRequestDispatcher("/guess-result.jsp").forward(req, resp);
     }
 }

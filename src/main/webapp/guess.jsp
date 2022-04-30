@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <form method="post">
-            <div class="card">
+            <div class="card mt-4">
                 <div class="car-header">
                     <p class="h3">Guess a Number (1, 2, 3)</p>
                 </div>
