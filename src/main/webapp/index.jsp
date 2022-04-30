@@ -22,6 +22,10 @@
                 <a href="http://localhost:8080/pickcolor" class="link-primary"
                    style="text-decoration: none">Pick Color</a>
             </li>
+            <li class="list-group-item">
+                <a href="http://localhost:8080/guess" class="link-primary"
+                   style="text-decoration: none">Guesser</a>
+            </li>
         </ul>
 
 
