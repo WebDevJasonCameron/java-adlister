@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container mt-4">
-    <form action="viewcolor.jsp" method="post">
+    <form action="/pickcolor" method="post">
         <div class="container">
             <div class="card">
                 <div class="card-header">
@@ -22,8 +22,11 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="color-choice">Enter Your Favorite Color</label>
-                        <input type="text" class="form-control" id="color-choice">
+                        <label for="color">Enter Your Favorite Color</label>
+                        <input type="text"
+                               name="color"
+                               class="form-control"
+                               id="color">
                     </div>
                 </div>
                 <div class="card-footer">

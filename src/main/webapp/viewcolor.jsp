@@ -5,14 +5,21 @@
   Time: 1:21 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %><html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
   <jsp:include page="partials/head.jsp">
     <jsp:param name="title" value="View Color" />
   </jsp:include>
+  <style>
+    body {
+      background: ${color};
+    }
+  </style>
+
 </head>
+
 <body>
-  <h1>Your at the view color page</h1>
+  <h3>Hey, your favorite color was: ${color}</h3>
 </body>
 </html>
