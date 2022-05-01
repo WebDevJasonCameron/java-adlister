@@ -13,8 +13,8 @@
 
         <ul class="list-group mt-4">
             <li class="list-group-item">
-                <a href="#" class="link-primary"
-                   style="text-decoration: none">Ad</a>
+                <a href="/ads" class="link-primary"
+                   style="text-decoration: none">Ads</a>
             </li>
         </ul>
     </div>

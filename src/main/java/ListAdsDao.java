@@ -1,9 +1,24 @@
+/**
+ * DAO
+ *
+ * Used for Ad Objects
+ */
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdsDao implements Ads {
+
+    // F
     private List<Ad> ads;
 
+    // CONST
+    public ListAdsDao() {                       //   NOT NEEDED... But written here as a
+    }                                           // reminder that this is called in the
+                                                // DaoFactory if getAdsDao finds the
+                                                // interface (adsDao) is null
+
+    // OVR
+    @Override
     public List<Ad> all() {
         if (ads == null) {
             ads = generateAds();
@@ -11,6 +26,8 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+    // METH
+    // Using this in place of an actual DB
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(
