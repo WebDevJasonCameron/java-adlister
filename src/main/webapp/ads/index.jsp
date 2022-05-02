@@ -12,7 +12,8 @@
         <jsp:param name="title" value="Please Log In" />
     </jsp:include>
 </head>
-<body>
+<body style="color: ${sessionScop['font-color']};
+        background-color: ${sessionScope['bg-color']};">
 
     <!--NAV-->
     <jsp:include page="../partials/navbar.jsp"></jsp:include>
@@ -20,7 +21,8 @@
     <!--MAIN-->
     <div class="container d-flex flex-wrap justify-content-center">
         <c:forEach var="ad" items="${ads}">
-            <div class="card w-25 mx-1 mb-3 ">
+            <div class="card w-25 mx-1 mb-3" style="color: ${sessionScope['font-color']};
+                    background-color: ${sessionScope['bg-color']}">
                 <div class="card-header">
                     ${ad.title}
                 </div>
@@ -33,6 +35,10 @@
             </div>
         </c:forEach>
     </div>
+
+<%--    Checking to see if we get the color name--%>
+<%--<h1>Font Color Is <span>${sessionScope['font-color']}</span></h1>--%>
+<%--<h1>Background Color Is <span>${sessionScope['bg-color']}</span></h1>--%>
 
 
 
