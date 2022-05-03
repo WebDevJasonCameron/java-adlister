@@ -1,9 +1,10 @@
-
+import com.sun.org.apache.xpath.internal.operations.Quo;
 
 public class DaoFactory {
 
     private static Ads adsDao;
     private static AuthorsDao authorsDao;
+    private static Quotes quotesDao;
 
     public static Ads getAdsDao() {
         if (adsDao == null) {
@@ -12,10 +13,17 @@ public class DaoFactory {
         return adsDao;
     }
 
-    public static Authors getAuthorDao() {
+    public static Authors getAuthorsDao() {
         if (authorsDao == null){
             authorsDao = new AuthorsDao();
         }
-        return getAuthorDao();
+        return authorsDao;
+    }
+
+    public static Quotes getQuotesDao(){
+        if(quotesDao == null){
+            quotesDao = new QuotesDao();
+        }
+        return quotesDao;
     }
 }

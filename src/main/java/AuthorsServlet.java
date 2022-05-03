@@ -16,11 +16,11 @@ public class AuthorsServlet extends HttpServlet {
         req.getRequestDispatcher("WEB-INF/quotes/authors.jsp").forward(req, resp);
     }
 
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String author_name = req.getParameter("author_name");
-//        Authors authorsDao = DaoFactory.getAuthorsDao();
-//        authorsDao.insert(new Author(0, author_name));
-//        resp.sendRedirect("/authors");
-//    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String author_name = req.getParameter("author_name");
+        Authors authorsDao = DaoFactory.getAuthorsDao();
+        authorsDao.insert(new Author(0, author_name));
+        resp.sendRedirect("/authors");
+    }
 }
