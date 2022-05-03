@@ -49,7 +49,36 @@ public class AuthorsDao implements Authors{
     }
 
     @Override
-    public void insert(Author author) {
+    public Author getAuthorById(long id) {
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM code_test_db.authors WHERE id=" + id);
+            rs.next();
+            Author author = new Author(
+                    rs.getLong("id"),
+                    rs.getString("author_name")
+            );
+            return author;
+        } catch (SQLException e){
+            throw new RuntimeException("Error Connecting to db ", e);
+        }
 
+    }
+
+    @Override
+    public long insert(Author author) {
+        String author_name = author.getAuthor_name();
+        String query = "INSERT INTO code_test_db.authors (author_name)" +
+                "VALUES('" + author_name + "')";
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = statement.getResultSet();
+            rs.next();
+            long key = rs.getLong(1);
+            return key;
+        } catch (SQLException e){
+            throw new RuntimeException("Error connecting to db", e);
+        }
     }
 }
