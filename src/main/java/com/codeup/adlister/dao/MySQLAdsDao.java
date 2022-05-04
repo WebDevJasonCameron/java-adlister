@@ -10,6 +10,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
@@ -17,7 +19,7 @@ public class MySQLAdsDao implements Ads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
+                config.getURL(),
                 config.getUser(),
                 config.getPassword()
             );

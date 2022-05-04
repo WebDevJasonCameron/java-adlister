@@ -10,4 +10,12 @@ public class DaoFactory {
         }
         return adsDao;
     }
+
+    public static Authors getAuthorsDao(){
+        if (authorsDao == null) {
+            authorsDao = new AuthorsDao(config);
+        }
+        return authorsDao;
+    }
+
 }
