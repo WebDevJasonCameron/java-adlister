@@ -9,14 +9,13 @@ DROP TABLE IF EXISTS ads;
 
 # Create an albums table with the following columns:
 CREATE TABLE IF NOT EXISTS ads  (
-                                      #       unsigned,NOT SIGNED , no negative values!
-                                      PRIMARY KEY (id),
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
-    title VARCHAR(100),
-    description VARCHAR(500)
-    );
-
+    title VARCHAR(200) NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id) On DELETE CASCADE
+);
 
 
 INSERT INTO ads (id, user_id, title, description)

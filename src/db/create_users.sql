@@ -9,12 +9,11 @@ DROP TABLE IF EXISTS users;
 
 # Create an albums table with the following columns:
 CREATE TABLE IF NOT EXISTS users  (
-                                       #       unsigned,NOT SIGNED , no negative values!
-                                       PRIMARY KEY (id),
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     email VARCHAR(100),
-    password VARCHAR(100)
+    password VARCHAR(100),
+    PRIMARY KEY (id)
     );
 
 
