@@ -12,10 +12,11 @@ import java.io.IOException;
 
 @WebServlet(name = "RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
-
     }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
