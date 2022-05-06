@@ -6,3 +6,6 @@ SELECT *
 
 DELETE FROM users
 WHERE username = 'newStarTreck';
+
+DELETE FROM users
+WHERE username = 'john';

@@ -2,6 +2,7 @@ package com.codeup.adlister.dao;
 
 import com.mysql.cj.jdbc.Driver;                //   <-- KEY IMPORTANT
 import com.codeup.adlister.models.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.*;
 
@@ -57,7 +58,7 @@ public class MySQLUsersDao implements Users  {
             PreparedStatement ps = connection.prepareStatement(q, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, u.getUsername());
             ps.setString(2, u.getEmail());
-            ps.setString(3, u.getPassword());
+            ps.setString(3, makeHash(u.getPassword()));
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();
@@ -67,4 +68,9 @@ public class MySQLUsersDao implements Users  {
            throw new RuntimeException("Error creating a new user (From UsersDao): ", e);
        }
     }
+
+    private String makeHash(String password){
+        return BCrypt.hashpw(password, BCrypt.gensalt());
+    }
+
 }

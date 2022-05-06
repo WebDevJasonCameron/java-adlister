@@ -10,7 +10,7 @@
 <div class="container">
     <h1>Please Register</h1>
     <form action="/register" method="POST">
-        <div class="form-group">`
+        <div class="form-group">
             <label for="r-username">Username</label>
             <input id="r-username" name="r-username" class="form-control" type="text">
         </div>
